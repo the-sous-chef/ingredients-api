@@ -1,1 +1,3 @@
-export * from "@thesouschef/prettier";
+import config from '@thesouschef/prettier';
+
+export default config;

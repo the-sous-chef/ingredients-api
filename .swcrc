@@ -1,0 +1,21 @@
+{
+    "$schema": "https://swc.rs/schema.json",
+    "env": {
+        "targets": {
+            "node": "22"
+        }
+    },
+    "jsc": {
+        "parser": {
+            "syntax": "typescript",
+            "tsx": false
+        },
+        "loose": false,
+        "minify": {
+            "compress": false,
+            "mangle": false
+        }
+    },
+    "minify": false,
+    "isModule": true
+}

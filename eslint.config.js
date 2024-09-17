@@ -1,1 +1,1 @@
-export * from "@thesouschef/eslint-config";
+export * from '@thesouschef/eslint-config';

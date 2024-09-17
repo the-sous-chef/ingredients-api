@@ -1,3 +1,3 @@
 export default {
-  "**/*.(t|j)s(x)?": "npm run format",
+    '**/*.(t|j)s(x)?': 'npm run format',
 };
