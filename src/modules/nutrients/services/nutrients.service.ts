@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Nutrient } from '@/common/models/database/nutrient.model';
-import { DatabaseService } from '@/modules/services/database.service';
+import { Nutrient } from '@/common/models/database/nutrient.model.js';
+import { DatabaseService } from '@/modules/services/database.service.js';
 
 // This service is only valid when we start using the database as the primary source of information.
 

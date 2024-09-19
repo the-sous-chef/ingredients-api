@@ -1,6 +1,6 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { Nutrient } from '@/common/models/database/nutrient.model';
-import { NutrientsService } from '@/modules/nutrients/services/nutrients.service';
+import { Nutrient } from '@/common/models/database/nutrient.model.js';
+import { NutrientsService } from '@/modules/nutrients/services/nutrients.service.js';
 
 // This resolver is only valid when we start using the database as the primary source of information.
 

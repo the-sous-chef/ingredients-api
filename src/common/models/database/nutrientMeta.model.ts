@@ -1,9 +1,9 @@
-import { FoodNutrient } from '@/common/models/usda/foodNutrient.model';
+import { FoodNutrient } from '@/common/models/usda/foodNutrient.model.js';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 @ObjectType({ description: 'nutrientMeta' })
 export class NutrientMeta {
-    @Field(() => ID)
+    @Field((type) => ID)
     usdaId: string;
 
     public static createFromUsda(data: FoodNutrient): NutrientMeta {

@@ -1,7 +1,8 @@
+import { IngredientsResolver } from '@/modules/ingredients/integredients.resolver.js';
+import { IngredientsService } from '@/modules/ingredients/services/ingredients.service.js';
 import { Module } from '@nestjs/common';
-import { DateScalar } from '@/common/scalars/date.scalar';
 
 @Module({
-    providers: [DateScalar],
+    providers: [IngredientsResolver, IngredientsService],
 })
 export class IngredientsModule {}

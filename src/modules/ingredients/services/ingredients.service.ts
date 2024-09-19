@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Ingredient } from '@/common/models/database/ingredient.model';
-import { DatabaseService } from '@/modules/services/database.service';
-import { DataType as UsdaDataType, SortBy as UsdaSortBy, UsdaService } from '@/modules/services/usda.service';
-
-type SortOrder = 'asc' | 'desc';
+import { Ingredient } from '@/common/models/database/ingredient.model.js';
+import { DatabaseService } from '@/modules/services/database.service.js';
+import { UsdaService } from '@/modules/services/usda.service.js';
+import { type UsdaDataType } from '@/common/scalars/usdaDataType.scalar.js';
+import { type UsdaSortBy } from '@/common/scalars/usdaSortBy.scalar.js';
+import { type SortOrder } from '@/common/scalars/sortOrder.scalar.js';
 
 export type FindAllInput = {
     query?: string;

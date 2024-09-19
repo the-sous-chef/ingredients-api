@@ -1,24 +1,21 @@
 import ky from 'ky';
 import querystring from 'node:querystring';
 import { Injectable } from '@nestjs/common';
-import { FoodItem } from '@/common/models/usda/foodItem.model';
-import { SearchResult } from '@/common/models/usda/searchResult.model';
+import { FoodItem } from '@/common/models/usda/foodItem.model.js';
+import { SearchResult } from '@/common/models/usda/searchResult.model.js';
+import { type UsdaSortBy } from '@/common/scalars/usdaSortBy.scalar.js';
+import { type SortOrder } from '@/common/scalars/sortOrder.scalar.js';
+import { type UsdaDataType } from '@/common/scalars/usdaDataType.scalar.js';
 
 // 'https://api.nal.usda.gov/fdc';
 
 export type Format = 'abridged' | 'full';
 
-export type DataType = 'Branded' | 'Foundation' | 'Survey (FNDDS)' | 'SR Legacy';
-
-export type SortBy = 'dataType.keyword' | 'lowercaseDescription.keyword' | 'fdcId' | 'publishedDate';
-
-export type SortOrder = 'asc' | 'desc';
-
 export type ListParameters = {
-    dataType?: DataType[];
+    dataType?: UsdaDataType[];
     pageSize?: number;
     pageNumber?: number;
-    sortBy?: SortBy;
+    sortBy?: UsdaSortBy;
     sortOrder?: SortOrder;
 };
 
@@ -35,10 +32,10 @@ export type FoodsParameters = {
 
 export type SearchParameters = {
     query?: string;
-    dataType?: DataType[];
+    dataType?: UsdaDataType[];
     pageSize?: number;
     pageNumber?: number;
-    sortBy?: SortBy;
+    sortBy?: UsdaSortBy;
     sortOrder?: SortOrder;
     brandOwner?: string;
 };

@@ -1,25 +1,25 @@
 import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
-import { NutrientMeta } from '@/common/models/database/nutrientMeta.model';
-import { FoodNutrient } from '@/common/models/usda/foodNutrient.model';
+import { NutrientMeta } from '@/common/models/database/nutrientMeta.model.js';
+import { FoodNutrient } from '@/common/models/usda/foodNutrient.model.js';
 
 @ObjectType({ description: 'nutrient' })
 export class Nutrient {
-    @Field(() => ID)
+    @Field((type) => ID)
     id: string;
 
-    @Field(() => Int, { nullable: true })
+    @Field((type) => Int, { nullable: true })
     amount?: Nullable<number>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     number?: Nullable<string>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     name?: Nullable<string>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     unitName?: Nullable<string>;
 
-    @Field(() => NutrientMeta)
+    @Field((type) => NutrientMeta)
     meta: NutrientMeta;
 
     public static createFromUsda(data: FoodNutrient): Nutrient {

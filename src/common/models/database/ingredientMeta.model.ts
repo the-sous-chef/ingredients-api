@@ -1,10 +1,10 @@
-import { FoodItem } from '@/common/models/usda/foodItem.model';
-import { SearchResultFood } from '@/common/models/usda/searchResultFood.model';
+import { FoodItem } from '@/common/models/usda/foodItem.model.js';
+import { SearchResultFood } from '@/common/models/usda/searchResultFood.model.js';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 @ObjectType({ description: 'ingredientMeta' })
 export class IngredientMeta {
-    @Field(() => ID)
+    @Field((type) => ID)
     usdaId: string;
 
     public static createFromUsda(data: FoodItem | SearchResultFood): IngredientMeta {

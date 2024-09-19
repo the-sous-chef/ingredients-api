@@ -1,34 +1,34 @@
 import crypto from 'node:crypto';
 import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
-import { IngredientMeta } from '@/common/models/database/ingredientMeta.model';
-import { Nutrient } from '@/common/models/database/nutrient.model';
-import { FoodItem } from '@/common/models/usda/foodItem.model';
-import { SearchResultFood } from '@/common/models/usda/searchResultFood.model';
+import { IngredientMeta } from '@/common/models/database/ingredientMeta.model.js';
+import { Nutrient } from '@/common/models/database/nutrient.model.js';
+import { FoodItem } from '@/common/models/usda/foodItem.model.js';
+import { SearchResultFood } from '@/common/models/usda/searchResultFood.model.js';
 
 @ObjectType({ description: 'ingredient' })
 export class Ingredient {
-    @Field(() => ID)
+    @Field((type) => ID)
     id: string;
 
-    @Field(() => IngredientMeta)
+    @Field((type) => IngredientMeta)
     meta: IngredientMeta;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     brandOwner?: Nullable<string>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     description?: Nullable<string>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     gtinUpc?: Nullable<string>;
 
-    @Field(() => Int, { nullable: true })
+    @Field((type) => Int, { nullable: true })
     servingSize?: Nullable<number>;
 
-    @Field(() => String, { nullable: true })
+    @Field((type) => String, { nullable: true })
     servingSizeUnit?: Nullable<string>;
 
-    @Field(() => [Nutrient], { nullable: true })
+    @Field((type) => [Nutrient], { nullable: true })
     nutrients?: Nullable<Nullable<Nutrient>[]>;
 
     public static createFromUsda(data: FoodItem | SearchResultFood): Ingredient {
